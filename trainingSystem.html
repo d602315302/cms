@@ -1,0 +1,60 @@
+<!-- 实训系统 -->
+<div class="practical-training">
+    <header class="header-public"> 
+        <h1>实训系统</h1>
+        <p>Practical Training</p>
+    </header>
+    <section class="info">
+        <p>上海豌豆信息技术有限公司成立于2004年，核心骨干由具备资深工作经验的软件研发和信才组成.</p>
+        <p>团队成员在软件研发和信息安全领域的平均工作年限超过10年。</p>
+        <p>我们主要专注于信息安全相关技术的研究工作，涉及研究领域较广泛</p>
+        <p>例如：二进制代码审计、基于模糊测试技术的强制漏洞挖掘、高级恶析、计算机和移动设备取证等</p>
+        <a href="#">
+            <img src="./img/trainingSystem/more .png" alt="">
+        </a>
+    </section>
+    <section class="row merit">
+        <ul class="col-md-12">
+            <li class="col-md-4">
+                <img src="./img/trainingSystem/Stable_efficient.png" alt="">
+                <h2>稳定高速</h2>
+                <p>最快的私有云业务生产能力，创建云主机的速度非常快，2-3秒即可创建1台符合您需求的云主机，更加适合海量业务需求。</p>
+            </li>
+            <li class="col-md-4">
+                <img src="./img/trainingSystem/Professional_equipment.png" alt="">
+                <h2>稳定高速</h2>
+                <p>经大量测试的虚拟化专用硬件，多台设备快速部署和构建私有云系统，支持各种类型和配置的运行时环境，满足弹性计算的需求。</p>
+            </li>
+            <li class="col-md-4">
+                <img src="./img/trainingSystem/Technical_service.png" alt="">
+                <h2>稳定高速</h2>
+                <p>快速响应，高质量售后，全国免费技术支持。我们将由工程师为您提供优质的技术服务，第一时间为您解决问题</p>
+            </li>
+        </ul>
+    </section>
+</div>
+<div class="High-quality-courses">
+    <header class="header-public">
+        <h1>精品课程</h1>
+        <p>Gold medal lecturer</p>
+    </header>
+    <section class="courseWrapper row">
+        <ul id="courseList" class="col-md-12"></ul>
+    </section>
+</div>
+<script>
+    $(function () {
+    for (let i = 0; i < 8; i++) {
+        let courseList = '';
+        let imgSrc = './img/trainingSystem/course.png';
+        let courseName = '国土资源空间';
+        courseList += '<li>';
+        courseList += '<img src="' + imgSrc + '">';
+        courseList += '<h4>' + courseName + '</h4>';
+        courseList += '</li>';
+        $('#courseList').append(courseList);
+    }
+
+})
+
+</script>

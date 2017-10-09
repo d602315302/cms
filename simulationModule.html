@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿真模块</title>
+    <link rel="stylesheet" href="css/cms.css">
+</head>
+<body>
+  <div class="simulation-box">
+       <div class="simulation-header">
+           <p>WEB应用系统远程取证仿真</p>
+       </div>
+       <div class="simulation-body">
+           <div class="simulation-body-left">
+               <div class="simulation-tab">
+                   <p class="tab-details">本课介绍</p>
+                   <div id="content1" class="tab-content " style="display: block;">
+                       <h3>本课目标</h3>
+                       <div class="tab-introduce">
+
+                       </div>
+                   </div>
+               </div>
+               <div class="simulation-tab">
+                   <p class="tab-details">实验步骤</p>
+                   <div id="content2" class="tab-content" style="display: none;">
+                   </div>
+               </div>
+           </div>
+           <div class="simulation-body-right simulation-body-right-bg">
+               <div class="maintab">
+                   <ul class="tabtitle">
+                        <li class="tabhover"><a id="csrf" href="#">csrf</a></li>
+                        <li class="taba"><a id="sql" href="#">sql注入</a></li>
+                        <li class="taba"><a id="web" href="#">WEB提权</a></li>
+                        <li class="taba"><a id="xss" href="#">XSS跨站</a></li>
+                        <li class="taba"><a id="traffic" href="#">流量监听</a></li>
+                        <li class="taba"><a id="password" href="#">密码找回</a></li>
+                   </ul>
+                   <div class="tabcontent">
+                       <a computerName="Android1" target="_blank">
+                           <img src="img/os/csrf.PNG" alt="csrf">
+                       </a>
+                   </div>
+                   <div class="tabcontent" style="display: none">
+                       <a computerName="Android2" target="_blank">
+                           <img src="img/os/sql.PNG" alt="sql注入">
+                       </a>
+                   </div>
+                   <div class="tabcontent" style="display: none">
+                       <a computerName="Android3" target="_blank">
+                           <img src="img/os/web.PNG" alt="WEB提权">
+                       </a>
+                   </div>
+                   <div class="tabcontent" style="display: none">
+                       <a computerName="Android4" target="_blank">
+                           <img src="img/os/xxs.PNG" alt="XSS跨站">
+                       </a>
+                   </div>
+                   <div class="tabcontent" style="display: none">
+                           <img src="img/os/traffic.jpg" alt="流量监听">
+                       <div class="traffic">
+                           <a computerName="Android5" target="_blank" ></a>
+                           <a computerName="Android6" target="_blank" ></a>
+                           <a computerName="Android7" target="_blank" ></a>
+                       </div>
+                   </div>
+                   <div class="tabcontent" style="display: none">
+                       <a computerName="Android8" target="_blank">
+                           <img src="img/os/password.PNG" alt="密码找回">
+                       </a>
+                   </div>
+           </div>
+       </div>
+  </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/cms/simulationData.js"></script>
+<script src="js/cms/simulationModule.js"></script>
+<script>
+    $(function () {
+        //根据ID载入不同的数据
+        for(let x of CSRF){
+            $(".simulation-header p").text(x.title);
+            $(".tab-introduce").html(x.introduce);
+            $("#content2").html(x.steps);
+        }
+
+        //点击tab页面加载
+        function TabClick(id,content) {
+            $('#'+id).click(function () {
+                for(let x of content){
+                    $(".simulation-header p").text(x.title);
+                    $(".tab-introduce").html(x.introduce);
+                    $("#content2").html(x.steps);
+                }
+            })
+        }
+
+        //csrf
+        TabClick("csrf",CSRF);
+        //sql
+        TabClick("sql",sql);
+        //xss
+        TabClick("xss",XSS);
+        //webBUG
+        TabClick("web",webBug);
+
+        //流量监控
+        TabClick("traffic",traffic);
+        //密码找回
+        TabClick("password",password);
+
+    })
+</script>
+</html>
+

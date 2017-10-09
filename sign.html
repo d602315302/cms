@@ -1,0 +1,31 @@
+<!--登陆-->
+<div class="sign">
+    <div class="sign-box">
+        <h1>登陆</h1>
+        <div>
+            <lable>账户名:</lable>
+            <input id="user" type="text" placeholder="请输入账户名">
+        </div>
+        <div>
+            <lable>登陆密码:</lable>
+            <input id="password" type="password" placeholder="请输入密码">
+        </div>
+        <div>
+            <lable>验证码:</lable>
+            <input class="yzm" type="text" placeholder="验证码">
+            <img id="imgCode" class="yzming" src="img/01.jpg" alt="验证码" onclick="getImgCode()">
+            <span onclick="getImgCode()"><a href="#">看不清换一张</a></span>
+        </div>
+        <button id="signbtn" class="signbtn">登陆</button>
+        <p>没有账号？请前往注册 <button id="forregistered">注册</button></p>
+    </div>
+    <img class="signright" src="img/signright.png" alt="图片">
+</div>
+<script src="js/jquery.cookies.js"></script>
+<script src="js/cms/sign.js"></script>
+<script>
+    $(function() {
+        //显示验证码图片
+        getImgCode();
+    });
+</script>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IOS仿真模块</title>
+    <link rel="stylesheet" href="css/cms.css">
+</head>
+<body>
+  <div class="simulation-box">
+       <div class="simulation-header">
+           <p>ios密码破解</p>
+       </div>
+       <div class="simulation-body">
+           <div class="simulation-body-left">
+               <div class="simulation-tab">
+                   <p class="tab-details">本课介绍</p>
+                   <div id="content1" class="tab-content " style="display: block;">
+                       <h3>本课目标</h3>
+                       <p>破解ios密码</p>
+                   </div>
+               </div>
+               <div class="simulation-tab">
+                   <p class="tab-details">实验步骤</p>
+                   <div id="iosContent" class="tab-content iosContent" style="display: none;">
+                       <p>第一步：关机，选择手机类型点击boot按钮出现弹出对话框点击确定</p>
+                       <p>第二步：选择固件，出现新的弹出框，点击next按钮，出现刷机界面</p>
+                       <p>第三步：手机端出现待机状态，进入刷机环境</p>
+                       <p>第四步：手机出现ok字体说明刷机成功，关闭刷机窗口</p>
+                       <p>第五步：点击launch开始破解密码，出现弹出框点击确定</p>
+                       <p>第六步：手机端进入密码破解样式</p>
+                       <p>第七步：破解成功，软件出现手机的基本信息，找到password，那就是你的手机密码</p>
+                   </div>
+               </div>
+           </div>
+           <div class="simulation-body-right">
+               <div class="IOSbox">
+                    <div class="simulationIos">
+                        <button id="boot" class="boot">Boot</button>
+                        <button id="Launch" class="Launch">Launch</button>
+                    </div>
+                    <div class="cmd" style="display: none"></div>
+                    <div class="IosPhone">
+                        <div class="appleLogo" style="display: none"></div>
+                        <div class="phoneGif flash1" style="display: none"></div>
+                    </div>
+               </div>
+           </div>
+       </div>
+  </div>
+  <!--<div class="simulation-next">-->
+      <!--<button id="next">Next</button>-->
+  <!--</div>-->
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/cms/simulationModuleIos.js"></script>
+</html>
+

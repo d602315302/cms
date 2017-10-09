@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿真模块</title>
+    <link rel="stylesheet" href="css/cms.css">
+</head>
+<body>
+  <div class="simulation-box">
+       <div class="simulation-header">
+           <p>远程控制技术仿真</p>
+       </div>
+       <div class="simulation-body">
+           <div class="simulation-body-left">
+               <div class="simulation-tab">
+                   <p class="tab-details">本课介绍</p>
+                   <div id="content1" class="tab-content " style="display: block;">
+                       <h3>本课目标</h3>
+                       <div class="tab-introduce"></div>
+                   </div>
+               </div>
+               <div class="simulation-tab">
+                   <p class="tab-details">实验步骤</p>
+                   <div id="content2" class="tab-content" style="display: none;">
+                   </div>
+               </div>
+           </div>
+           <div class="simulation-body-right simulation-body-right-bg">
+               <div class="maintab">
+                   <ul class="tabtitle">
+                       <li class="tabhover"><a id="network" href="#">网络数据分析</a></li>
+                       <li class="tab"><a id="remoteControl" href="#">远程控制</a></li>
+                   </ul>
+
+                   <div class="tabcontent" style="display: block">
+                           <img src="img/os/network.jpg" alt="网络数据分析">
+                       <div class="network">
+                           <a computerName="Android3" target="_blank"></a>
+                           <a computerName="Android3" target="_blank"></a>
+                           <a computerName="Android3" target="_blank"></a>
+                       </div>
+                   </div>
+                   <div class="tabcontent" style="display: none">
+                           <img src="img/os/remoteControl.PNG" alt="远程控制">
+                       <div class="remoteControl">
+                           <a computerName="Android3" target="_blank"></a>
+                           <a computerName="Android3" target="_blank"></a>
+                       </div>
+                   </div>
+
+           </div>
+       </div>
+  </div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/cms/simulationData.js"></script>
+<script src="js/cms/simulationModule.js"></script>
+<script>
+    $(function () {
+        //根据ID载入不同的数据
+        for(let x of network){
+            $(".simulation-header p").text(x.title);
+            $(".tab-introduce").html(x.introduce);
+            $("#content2").html(x.steps);
+        }
+
+        //点击tab页面加载
+        function TabClick(id,content) {
+            $('#'+id).click(function () {
+                for(let x of content){
+                    $(".simulation-header p").text(x.title);
+                    $(".tab-introduce").html(x.introduce);
+                    $("#content2").html(x.steps);
+                }
+            })
+        }
+
+        //csrf
+        TabClick("network",network);
+        //sql
+        TabClick("remoteControl",remoteControl);
+    })
+</script>
+</html>
+

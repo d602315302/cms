@@ -1,0 +1,34 @@
+<!--注册新用户-->
+<div class="sign">
+    <div class="sign-box">
+        <h1>注册新用户</h1>
+        <div>
+            <lable>账户名:</lable>
+            <input id="reguser" type="text" placeholder="请输入账户名">
+        </div>
+        <div>
+            <lable>设置密码:</lable>
+            <input id="regpassword" type="password" placeholder="请输入密码">
+        </div>
+        <div>
+            <lable>重复密码:</lable>
+            <input id="regpassword1" type="password" placeholder="请输入密码">
+        </div>
+        <div>
+            <lable>验证码:</lable>
+            <input class="yzm" type="text" placeholder="验证码">
+            <img id="imgCode" class="yzming" src="img/01.jpg" alt="验证码" onclick="getImgCode()">
+            <span onclick="getImgCode()"><a href="#">看不清换一张</a></span>
+        </div>
+        <button id="regbtn" class="signbtn">注册</button>
+    </div>
+    <p class="regp">已有账号？请直接登陆 <button id="forsign">登陆</button></p>
+</div>
+<script src="js/jquery.cookies.js"></script>
+<script src="js/cms/sign.js"></script>
+<script>
+    $(function() {
+        //显示验证码图片
+        getImgCode();
+    });
+</script>
